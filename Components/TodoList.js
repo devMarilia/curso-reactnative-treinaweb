@@ -7,6 +7,7 @@ class TodoList extends Component{
         list: [
             {id: '1', text: 'ABC'},
             {id: '2', text: 'DEF'},
+            {id: '3', text: 'DEF'},
         ]
     };
 
