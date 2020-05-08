@@ -1,23 +1,25 @@
 import React, { Component } from 'react';
-import { View, Text, FlatList,StyleSheet} from 'react-native';
+import { View, Text, FlatList,StyleSheet, Button} from 'react-native';
 
 
 class TodoList extends Component{
     static defaultProps = {
-        list: [
-            {id: '1', text: 'ABC'},
-            {id: '2', text: 'DEF'},
-            {id: '3', text: 'DEF'},
-            {id: '4', text: 'DEF'},
-        ]
-    };
+        list: [],
+        onRemove:() => {}
+    }
 
     handleRow = ({item, index}) => {
         return(
-            <View>
-                <Text>
+            <View  style={{flexDirection:'row', margin:5}}>
+                <Text style={{flex: 1}}>
                     {this.formatListNumber(index)} - {item.text}
                 </Text>
+                <Button
+                style={{width: 30}}
+                title='X'
+                color='#333'
+                onPress={() => {this.props.onRemove(item)}}
+                />
             </View>
         )
     }
@@ -41,4 +43,4 @@ class TodoList extends Component{
     };
 }
 
-export default TodoList;
+export default TodoList; 
