@@ -1,0 +1,6 @@
+/*prrttierrc*/
+
+{
+    "singleQuote": true,
+    "trailingComma": "es5"
+}
